@@ -1,0 +1,21 @@
+name: crusalis_utils_server
+version: '1.0'
+main: org.oreo.crusalis_utils_server.Crusalis_utils_server
+api-version: '1.21'
+
+commands:
+
+  nation-announcements: #Command to announce
+    description: Announce something to your nation members
+    usage: /<command>
+    aliases: [ na ]
+
+  income:
+    description: A simple command that sums up your income
+    usage: /<command>
+    aliases: [ income_summary ]
+
+  cu:
+    description: The main command for crusalis utils functions
+    usage: /<command>
+    aliases: [ crusalis_utils ]
