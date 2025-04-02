@@ -86,8 +86,8 @@
         <dependency>
             <groupId>ldapjdk</groupId>
             <artifactId>ldapjdk</artifactId>
-            <scope>system</scope>
             <version>1.0</version>
+            <scope>system</scope>
             <systemPath>${basedir}\src\libs\nodes-1.16-SNAPSHOT-0.0.10.jar</systemPath>
         </dependency>
     </dependencies>

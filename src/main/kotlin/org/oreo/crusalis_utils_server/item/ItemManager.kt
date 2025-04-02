@@ -2,6 +2,7 @@ package org.oreo.crusalis_utils_server.item
 
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
+import org.bukkit.enchantments.Enchantment
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemFlag
 import org.bukkit.inventory.ItemStack
@@ -12,7 +13,7 @@ import java.util.*
 object ItemManager {
     private var plugin: JavaPlugin? = null
 
-    const val CRUSALIS_UTILS_KEY = "Crusalis utils"
+    const val CRUSALIS_UTILS_KEY = "Crusalis_utils"
 
     var teleComunicationSctick: ItemStack? = null
     var playerTeamInfo: ItemStack? = null
@@ -58,6 +59,7 @@ object ItemManager {
 
             meta.lore = lore
 
+            meta.addEnchant(Enchantment.MENDING, 1, false)
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS)
 
             val data = meta.persistentDataContainer
@@ -100,7 +102,7 @@ object ItemManager {
      * @param itemToCheck the custom item to check against
      * @return true if the given item matches the custom item, false otherwise
      */
-    private fun isCustomItem(item: ItemStack , itemToCheck : ItemStack?): Boolean {
+    public fun isCustomItem(item: ItemStack , itemToCheck : ItemStack?): Boolean {
 
         if (itemToCheck == null) {
             return false

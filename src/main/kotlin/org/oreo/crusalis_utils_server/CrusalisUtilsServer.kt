@@ -4,17 +4,19 @@ import org.bukkit.plugin.java.JavaPlugin
 import org.oreo.crusalis_utils_server.commands.AnnounceCommand
 import org.oreo.crusalis_utils_server.commands.CrusalisUtilsCommands
 import org.oreo.crusalis_utils_server.commands.IncomeSummary
+import org.oreo.crusalis_utils_server.events.ItemClickingListener
 import org.oreo.crusalis_utils_server.events.ItemHoldingListener
 import org.oreo.crusalis_utils_server.item.ItemManager
-import kotlin.concurrent.thread
 
-class Crusalis_utils_server : JavaPlugin() {
+
+class CrusalisUtilsServer : JavaPlugin() {
 
     override fun onEnable() {
-        logger.info("Crusalis utils enabled")
-        logger.info("Millions must download crualis utils")
 
-        getCommand("nation-announcements")!!.setExecutor(AnnounceCommand(this, this))
+        logger.info("Crusalis utils enabled")
+        logger.info("Millions must download crusalis utils")
+
+        getCommand("nation-announcements")!!.setExecutor(AnnounceCommand())
         getCommand("income")!!.setExecutor(IncomeSummary())
         getCommand("cu")!!.setExecutor(CrusalisUtilsCommands())
 
@@ -27,6 +29,7 @@ class Crusalis_utils_server : JavaPlugin() {
 
     private fun enableListeners(){
         server.pluginManager.registerEvents(ItemHoldingListener(this), this)
+        server.pluginManager.registerEvents(ItemClickingListener(this), this)
     }
 
 

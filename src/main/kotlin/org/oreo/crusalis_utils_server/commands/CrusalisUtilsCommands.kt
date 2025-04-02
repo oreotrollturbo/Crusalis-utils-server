@@ -40,7 +40,7 @@ class CrusalisUtilsCommands : CommandExecutor, TabCompleter {
                     }
                     return true
                 }
-                "teamInfo" -> {
+                "teaminfo" -> {
                     if (sender is Player) {
                         sender.inventory.addItem(ItemManager.playerTeamInfo!!)
                         return true

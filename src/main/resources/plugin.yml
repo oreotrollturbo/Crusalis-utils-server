@@ -1,7 +1,10 @@
 name: crusalis_utils_server
 version: '1.0'
-main: org.oreo.crusalis_utils_server.Crusalis_utils_server
+main: org.oreo.crusalis_utils_server.CrusalisUtilsServer
 api-version: '1.21'
+
+depend:
+  - nodes
 
 commands:
 
